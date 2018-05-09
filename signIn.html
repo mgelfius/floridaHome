@@ -9,6 +9,34 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        
+        <div class="header">
+            <u><h1>Sign In</h1></u>
+            <br>
+            <form id="signInForm">
+                <input type="text" placeholder="Email address" name="username" autofocus required/>
+                <br>
+                <br>
+                <input type="password" placeholder="Password" name="password" required/>
+                <br>
+                <br>
+                <button type="submit">Sign In</button>
+                <br>
+            </form>
+        </div> 
+        <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-auth.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDXqe2GtaRKk5Ss2MhkCWgcIIyFY27ow7A",
+            authDomain: "floridahome-1296d.firebaseapp.com",
+            databaseURL: "https://floridahome-1296d.firebaseio.com",
+            projectId: "floridahome-1296d",
+            storageBucket: "floridahome-1296d.appspot.com",
+            messagingSenderId: "626378549785"
+          };
+          firebase.initializeApp(config);
+        </script>
+    <script src="signIn.js"></script> 
     </body>
 </html>
