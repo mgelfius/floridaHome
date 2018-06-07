@@ -7,7 +7,9 @@ function handleSubmit(ev){
     var auth = firebase.auth();
     var currentUser = auth.currentUser;
     firebase.auth().signInWithEmailAndPassword(username, password)
-    goToMain()
+    setTimeout(function(){
+        goToMain()
+    }, 500)
 }
 
 function goToMain(){
