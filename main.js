@@ -1,6 +1,7 @@
 const firestore = firebase.firestore();
-  const settings = {timestampsInSnapshots: true};
-  firestore.settings(settings);
+const settings = {timestampsInSnapshots: true};
+firestore.settings(settings);
+var db = firebase.firestore();
 
 firebase.auth().onAuthStateChanged(function(user){
     if(user){
@@ -29,6 +30,11 @@ document.querySelector('#dateSubmit').addEventListener('click', function(e){
         alert("Please move end date back to fit in a valid date range")
     }else{
         alert("Success!")
+        var uid = firebase.auth().currentUser.uid
+        db.collection("users").doc(uid).update({
+            startDate: startDate.value,
+            endDate: endDate.value
+        })
     }
 })
 

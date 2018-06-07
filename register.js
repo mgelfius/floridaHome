@@ -32,7 +32,9 @@ function writeUserData(firstName, lastName, email, phone){
         firstName: firstName,
         lastName: lastName,
         email: email,
-        phone: phone
+        phone: phone,
+        startDate: " ",
+        endDate: " "
     });
     setTimeout(function(){
         window.location.href = './signIn.html'
