@@ -1,7 +1,8 @@
-const firestore = firebase.firestore();
-const settings = {timestampsInSnapshots: true};
-firestore.settings(settings);
-var db = firebase.firestore();
+const firestore = firebase.firestore()
+const settings = {timestampsInSnapshots: true}
+firestore.settings(settings)
+var db = firebase.firestore()
+var maxDate
 
 firebase.auth().onAuthStateChanged(function(user){
     if(user){
@@ -26,7 +27,7 @@ document.querySelector('#dateSubmit').addEventListener('click', function(e){
     if(endDate.value <= startDate.value){
         alert("Please enter a valid date range")
     }else 
-    if(endDate.value > endDate.max){
+    if(endDate.value > maxDate){
         alert("Please move end date back to fit in a valid date range")
     }else{
         alert("Success!")
@@ -43,17 +44,8 @@ function refresh(){
     var month = startDate.value.split('-')[1]
     var year = startDate.value.split('-')[0]
     var fullDate = year + '-' + month + '-' + day
-    endDate.setAttribute('max', fullDate)
+    maxDate = fullDate
 }
-
-document.getElementById('endDate').addEventListener('click', function(e){
-    e.preventDefault()
-    var day = parseInt(startDate.value.split('-')[2]) + 3
-    var month = startDate.value.split('-')[1]
-    var year = startDate.value.split('-')[0]
-    var fullDate = year + '-' + month + '-' + day
-    endDate.setAttribute('max', fullDate)
-})
 
 var today = new Date().toISOString().split('T')[0]
 var startDate = document.getElementById("startDate")
