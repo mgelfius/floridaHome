@@ -1,7 +1,7 @@
 const firestore = firebase.firestore();
-  const settings = {timestampsInSnapshots: true};
-  firestore.settings(settings);
-  firebase.auth().signOut()
+const settings = {timestampsInSnapshots: true};
+firestore.settings(settings);
+firebase.auth().signOut()
 
 function handleSubmit(ev){
     ev.preventDefault();

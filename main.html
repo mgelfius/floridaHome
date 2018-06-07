@@ -13,22 +13,39 @@
         
         <div class="header">
             <div>
-                <h1><u>Welcome!</u></h1>
+                <h1 id='welcome'><u>Welcome!</u></h1>
             </div>
+            <div id='main'>
+                <h1>Select start date for visit below</h1>
+                <form id="dateForm">
+                    <h3>Start date</h3>
+                    <input id="startDate" type="date" required />
+                    <br>
+                    <h3>End date</h3>
+                    <input id="endDate" type="date" required />
+                    <br>
+                    <br>
+                    <button id="dateSubmit" type="submit">Submit dates for approval</button>
+                </form>
+            </div>
+            <br>
+            <br>
             <button type='submit' id='signOut'>Sign out</button>
         </div>
     </body>
     <script>
-        // Initialize Firebase
-        var config = {
+      // Initialize Firebase
+      var config = {
         apiKey: "AIzaSyDXqe2GtaRKk5Ss2MhkCWgcIIyFY27ow7A",
         authDomain: "floridahome-1296d.firebaseapp.com",
         databaseURL: "https://floridahome-1296d.firebaseio.com",
         projectId: "floridahome-1296d",
         storageBucket: "floridahome-1296d.appspot.com",
         messagingSenderId: "626378549785"
-        };
-        firebase.initializeApp(config);
+      };
+      firebase.initializeApp(config);
     </script>
-    <script src="main.js"></script> 
+
+    <script src="main.js"></script>
+    <script src = "base.js" />
 </html>
