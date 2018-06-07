@@ -12,6 +12,7 @@ function handleSubmit(ev){
     const lastName = f.lastName.value
     const phone = f.cell.value
     firebase.auth().createUserWithEmailAndPassword(email, pass)
+    load()
     setTimeout(function(){
         checkLoggedIn(firstName, lastName, email, phone)
     }, 750)
@@ -41,6 +42,23 @@ function writeUserData(firstName, lastName, email, phone){
     }, 750)
  
 }
+
+function load() {
+    var bar = document.getElementById("loadBar")
+    var div = document.getElementById("progressDiv")
+    bar.style.opacity = "1"
+    div.style.opacity = "1"
+    var width = 1
+    var id = setInterval(frame, 14)
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id)
+      } else {
+        width++
+        bar.style.width = width + '%'
+      }
+    }
+  }
 
 const registerForm = document.querySelector('#registerForm')
 registerForm.addEventListener('submit', handleSubmit)

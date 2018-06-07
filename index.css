@@ -19,3 +19,16 @@ input{
 button{
     border-radius: 5px;
 }
+
+#progressDiv {
+    width: 100%;
+    background-color: #ddd;
+    opacity: 0;
+  }
+  
+  #loadBar {
+    width: 1%;
+    height: 10px;
+    background-color: rgb(76, 168, 175);
+    opacity: 0;
+  }
